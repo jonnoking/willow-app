@@ -17,6 +17,7 @@ var config = require("../config");
         //     source={require('./img/badge.png')}
         //   />
 
+
 var lock = new Auth0Lock(config.auth0);
 
 class WelcomeView extends React.Component
@@ -46,12 +47,20 @@ class WelcomeView extends React.Component
     );
   }
   _onLogin()  {
-    lock.show({
-      // authParams: {
-      //   scope: 'openid, email, picture'
-      // },
-      closable: true,
-    }, (err, profile, token) => {
+// Lock v9
+  var options = {
+            closable: true, // works
+            disableSignUp: true,
+            disableResetPassword: true,
+            //connections: ['jonnoking-com'], // works
+            allowSignUp: false,
+            authParams: {
+                scope: 'openid email user_metadata groups mfa scopes'
+            }
+        };
+
+    lock.show(options, 
+      (err, profile, token) => {
       if (err) {
         console.log(err);
         return;

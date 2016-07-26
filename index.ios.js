@@ -17,7 +17,7 @@ class Auth0Sample extends Component {
   render() {
       return (
         <Navigator style={styles.navigator}
-          initialRoute={{ name: "ProfileProperties", title: "Profile Properties"}}
+          initialRoute={{ name: "Welcome", title: "Profile Properties"}}
           renderScene= { this.renderScene }
           navigationBar={
              <Navigator.NavigationBar

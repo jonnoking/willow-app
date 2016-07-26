@@ -84,7 +84,10 @@ class ProfilePropertiesView extends React.Component
         if (this.props.profileProp) {
             profile = this.props.profileProp.node;
             profileParent = this.props.profileParent;
-        } else {
+        } else if (this.props.profile) {
+            profile = this.props.profile;
+        }
+        else {
             profile = require('../profile-data');
         }
         var dataBlob = {};

@@ -12,5 +12,8 @@
     "recursive-iterator": "^2.0.0",
     "type-check": "^0.3.2",
     "type-detect": "^2.0.1"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.29.0"
   }
 }
